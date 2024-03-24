@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
+
+:root{
+    --primary-color:rgb(0, 132, 255);
+}
+
+*{
+    box-sizing: border-box;
+    outline: 0;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    font-family: open;
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+.container{
+    box-shadow: 0 0px 350px rgb(88, 51, 255);
+    border: 1px;
+    border-radius: 40px;
+    border-style: none ;
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.statics{
+    margin-left: 28px;
+    margin-bottom: 30px;
+}
+
+p{
+    padding: 0;
+    margin: 5px;
+}
+.statics, .imc, .result{
+    border: solid 2px;
+    border-radius: 35px;
+    padding: 15px;
+    float: left;
+}
+
+.imc, .result{
+    margin: 20px;
+    width: 220px;
+}
+
+form input, form label, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
+form input{
+    box-shadow: 0 0px 120px rgb(88, 51, 255);
+    font-size: 25px;
+    height: 40px;
+    padding: 0 15px;
+    border: none;
+    transition: 0.3s;
+}
+
+form input:focus{
+    transition: 0.3s;
+    outline: purple 3px solid ;
+}
+
+form label{
+    margin-left: 20px;
+}
+
+form button{
+    box-shadow: 0 0px 120px rgb(88, 51, 255);
+    border: none;
+    background-color: rgb(84, 87, 255);
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    height: 50px;
+    cursor: pointer;
+    transition: 1s;
+    margin-top: 35px;
+}
+
+form button:hover{
+    background-color: rgb(62, 49, 182);
+    transition: 0.5s;
+}
+
+form button:active{
+    background-color: rgb(39, 53, 255);
+    transition: 0.5s;
+}
+
+.result-paragraph{
+    background-color: rgb(97, 255, 168);
+    padding: 10px 5px;
+    padding-left: 20px;
+    border-radius: 45px;
+    max-width: 100%;
+}
+
+.invalid-result {
+    background-color: rgb(180, 77, 77);
+    padding: 10px 5px;
+    padding-left: 20px;
+    border-radius: 45px;
+    max-width: 100%;
+}
