@@ -1,0 +1,33 @@
+body{
+    font-family: "Poppins", sans-serif;
+}
+.container{
+    background-color: #84b6f4;
+    width: 100%;
+    height: 100vh;
+}
+.menu-container{
+    background-color: #6a9eda;
+    width: 100vw;
+    height: 4vh;
+    padding: 5px;
+    padding-top: 17px;
+    text-align: center;
+}
+
+
+.nav-options {
+    color: black;
+    font-size: 23px;
+    padding-left: 0.7vw;
+    padding-right: 0.7vw;
+    padding-top: 0.4vh;
+    padding-bottom: 0.4vh;
+    text-decoration: none;
+    border-radius: 1vw;
+    transition: 1s;
+}
+.nav-options:hover {
+    background-color: #b2dafa;
+    box-shadow: 0 0 15px lightgray;
+}
