@@ -84,3 +84,4 @@ console.log(nomes12)
 const nome1 = ['João', 'Gomes', 'Oliveira']
 const nomes13 = nome1.join(' ') 
 console.log(nomes13)
+
