@@ -1,6 +1,5 @@
 // O método map() invoca a função callback passada por argumento para cada elemento do Array e devolve um novo Array como resultado.
 
-
 // Dobre os numeros
 const numeros = [5, 50, 80, 1, 2, 3, 4, 5, 8, 7, 11, 15, 22, 27];
 
