@@ -29,13 +29,14 @@ function validaCPF(cpfEnviado) {
 validaCPF.prototype.valida = function() {
     if(typeof this.cpfLimpo === 'undefined') return false
     if(this.cpfLimpo.length !== 11) return false
+    if(this.isSequencia()) return false
     
     const cpfParcial = this.cpfLimpo.slice(0, -2)
     const digito1 = this.criaDigito(cpfParcial)
     const digito2 = this.criaDigito(cpfParcial + digito1)
 
     const novoCPF = cpfParcial + digito1 + digito2
-    return true
+    return novoCPF === this.cpfLimpo
 }
 
 validaCPF.prototype.criaDigito = function(cpfParcial) {
@@ -53,5 +54,15 @@ validaCPF.prototype.criaDigito = function(cpfParcial) {
     return digito > 9 ? '0' : String(digito)
 }
 
+validaCPF.prototype.isSequencia = function() {
+    const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length)
+    return sequencia === this.cpfLimpo
+}
+
 const cpf = new validaCPF('705.484.450-52')
-console.log(cpf.valida())
+
+if(cpf.valida()) {
+    console.log('CPF Válido')
+}else{
+    console.log('CPF Inválido')
+}
