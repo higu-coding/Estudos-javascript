@@ -6,7 +6,7 @@ Object.entries -> método estático retorna uma matriz de pares de 'chave-valor'
 
 Object.getOwnPropertyDescriptor(o, 'propriedade') -> método estático retorna um objeto descrevendo a configuração de uma propriedade específica em um dado objeto (ou seja, uma diretamente presente em um objeto e não na cadeia de protótipos do objeto). O objeto retornado é mutável, mas mutar ele não tem efeito na configuração da propriedade original.
 
-Object.assign(des, any) -> método estático copia todas as propriedades próprias enumeráveis​​de um ou mais objetos de origem para um objeto de destino . Ele retorna o objeto de destino modificado.
+Object.assign(des, any) -> método estático copia todas as propriedades próprias enumeráveis ​​de um ou mais objetos de origem para um objeto de destino . Ele retorna o objeto de destino modificado.
 
 ...(spread)
 
