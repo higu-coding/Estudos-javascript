@@ -35,3 +35,27 @@ const c1 = new Carro('Fusca')
 
 c1.velocidade = 55
 console.log(c1.velocidade)
+
+// Outro exemplo
+
+class Pessoa {
+    constructor(nome, sobrenome) {
+        this.nome = nome
+        this.sobrenome = sobrenome
+    }
+
+    get nomeCompleto() {
+        return this.nome + ' ' + this.sobrenome
+    }
+
+    set nomeCompleto(valor) {
+        valor = valor.split(' ')
+        this.nome = valor.shift()
+        this.sobrenome = valor.join(' ')
+    }
+}
+
+const p2 = new Pessoa ('Carlos', 'Oliveira')
+p2.nomeCompleto = 'Carlos Oliveira Cruz'
+console.log(p2.nome)
+console.log(p2.sobrenome)
