@@ -51,8 +51,8 @@ form input{
 }
 
 form input:focus{
-    transition: 0.3s;
-    outline: purple 3px solid ;
+    transition: 0.1s;
+    outline: rgb(48, 48, 48) 2px solid ;
 }
 
 form button{
@@ -75,4 +75,9 @@ form button:hover{
 form button:active{
     background-color: rgb(148, 148, 148);
     transition: 0.5s;
+}
+
+.error-text {
+    font-size: 15px;
+    color: red;
 }
