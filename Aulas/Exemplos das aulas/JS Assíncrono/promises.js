@@ -7,7 +7,10 @@ function rand(min, max) {
 
 function waiting(msg, tempo) {
     return new Promise((resolve, reject) => {
-        if (typeof msg !== 'string') reject('BAD RESPONSE')
+        if (typeof msg !== 'string') {
+            reject('BAD RESPONSE')
+            return
+        }
         
         setTimeout(() => {
             resolve(msg)
