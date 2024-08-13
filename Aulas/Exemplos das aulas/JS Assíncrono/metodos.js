@@ -7,12 +7,12 @@ function rand(min, max) {
 
 function waiting(msg, tempo) {
     return new Promise((resolve, reject) => {
-        if (typeof msg !== 'string') {
-            reject('BAD RESPONSE')
-            return
-        }
-        
         setTimeout(() => {
+            if (typeof msg !== 'string') {
+                reject('BAD RESPONSE')
+                return
+            }
+
             resolve(msg.toUpperCase() + ' - Passei na promise')
             return
         }, tempo)
@@ -22,14 +22,23 @@ function waiting(msg, tempo) {
 // Promise.all / Promise.race / Promise.resolve / Promise.reject
 
 const promises = [
-    'Primeiro valor', 
-    waiting('Promise 1', 3000),
-    waiting('Promise 2', 500),
-    waiting('Promise 3', 1000),
-    'Outro valor'
+    //'Primeiro valor', 
+    waiting('Promise 1', rand(1, 5)),
+    waiting('Promise 2', rand(1, 5)),
+    waiting('Promise 3', rand(1, 5)),
+    //'Outro valor'
 ]
 
-Promise.all(promises).then(function(valor) {
+// Promise.all
+
+// Promise.all(promises).then(function(valor) {
+//     console.log(valor)
+// }).catch(function(erro) {
+//     console.log(erro)
+// })
+
+// Promise.race
+Promise.race(promises).then(function(valor) {
     console.log(valor)
 }).catch(function(erro) {
     console.log(erro)
