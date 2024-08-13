@@ -21,13 +21,13 @@ function waiting(msg, tempo) {
 
 // Promise.all / Promise.race / Promise.resolve / Promise.reject
 
-const promises = [
-    //'Primeiro valor', 
-    waiting('Promise 1', rand(1, 5)),
-    waiting('Promise 2', rand(1, 5)),
-    waiting('Promise 3', rand(1, 5)),
-    //'Outro valor'
-]
+// const promises = [
+//     //'Primeiro valor', 
+//     waiting('Promise 1', rand(1, 5)),
+//     waiting('Promise 2', rand(1, 5)),
+//     waiting('Promise 3', rand(1, 5)),
+//     //'Outro valor'
+// ]
 
 // Promise.all
 
@@ -38,8 +38,26 @@ const promises = [
 // })
 
 // Promise.race
-Promise.race(promises).then(function(valor) {
-    console.log(valor)
-}).catch(function(erro) {
-    console.log(erro)
-})
+// Promise.race(promises).then(function(valor) {
+//     console.log(valor)
+// }).catch(function(erro) {
+//     console.log(erro)
+// })
+
+// Promise.resolve e reject
+// se a constante  'emCache' estiver como 'true', e estiver retornando o metodo resolve, vai cair  no metodo '.then', se estiver retornando o metodo  reject,  vai  cair no metodo '.catch'  
+
+function baixaPagina() {
+    const emCache = true
+
+    if(emCache){
+        // return Promise.resolve('Página em cache')
+        return Promise.reject('Página em cache')
+    } else {
+        return waiting('Baixei a página',  3000)
+    }
+}
+
+baixaPagina().then(dadosPagina => {
+    console.log(dadosPagina)
+}).catch(e => console.log('ERRO',e))
