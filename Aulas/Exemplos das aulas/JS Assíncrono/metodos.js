@@ -1,3 +1,11 @@
+//O método Promise.all(iterable) retorna uma única Promise que resolve quando todas as promises no argumento iterável forem resolvidas ou quando o iterável passado como argumento não contém promises. É rejeitado com o motivo da primeira promise que foi rejeitada.
+
+//O método Promise.race(iterable) retorna uma promise que resolve ou rejeita assim que uma das promises no iterável resolver ou rejeitar, com o valor ou razão daquela promise.
+
+//O método Promise.resolve(value) retorna um objeto Promise que é resolvido com o valor passado. Se o valor for thenable (ex: tiver um método then), a promise retornada irá "seguir" esse thenable, adotando seu estado final; se o valor for uma promise, o objeto será o resultado da chamada Promise.resolve; do contrário a promise será realizada com o valor.
+
+//O método Promise.reject(motivo) retorna um objeto Promise que é rejeitada com um dado motivo.
+
 function rand(min, max) {
     min *= 1000
     max *= 1000
