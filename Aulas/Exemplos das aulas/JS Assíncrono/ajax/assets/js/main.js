@@ -28,21 +28,47 @@ document.addEventListener('click', e => {
 async function carregaPagina(el) {
     const href = el.getAttribute('href')
     
-    const objConfig = {
-        method: 'GET',
-        url: href,
+    // const objConfig = {
+    //     method: 'GET',
+    //     url: href,
         
-    }
+    // }
 
-    try {
-        const response = await request(objConfig)
-        carregaResultado(response)
-    } catch (e) {
+    // try {
+    //     const response = await request(objConfig)
+    //     carregaResultado(response)
+    // } catch (e) {
+    //     console.log(e)
+    // }
+
+// Fetch API abaixo
+
+   try {
+        const response = await fetch(href)
+
+        if(response.status !== 200) throw new Error('ERRO')
+
+        const html = await response.text()
+
+        carregaResultado(html)
+   } catch(e) {
         console.log(e)
-    }
+   }
+
+    // fetch(href)
+        // .then(response => {
+        //     if(response.status !== 200) throw new Error('ERRO')
+        //     return response.text()
+        // })
+        // .then(html => carregaResultado(html))
+        // .catch(e => console.log(e))
+
 }
 
 function carregaResultado(response) {
     const resultado = document.querySelector('.resultado')
     resultado.innerHTML = response
 }
+
+// Fetch API na função 'carregaPagina'
+
