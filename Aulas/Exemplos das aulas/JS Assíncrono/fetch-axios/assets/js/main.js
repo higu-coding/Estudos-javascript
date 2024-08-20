@@ -1,3 +1,5 @@
+// O Axios fornece os dados no objeto de resposta, enquanto fetch() fornece o objeto de resposta em si, que contém outras informações como status, headers e url . O Axios manipula erros no bloco catch, enquanto fetch() rejeita a promessa somente se houver um erro de rede, não se a resposta tiver um status de erro.
+
 // fetch('pessoas.json')
 //     .then(resposta => resposta.json())
 //     .then(json => carregaElementosNaPagina(json))
