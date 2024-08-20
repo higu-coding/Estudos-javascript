@@ -1,3 +1,10 @@
+// documentação https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+// A API Fetch fornece uma interface JavaScript para fazer solicitações HTTP e processar as respostas.
+
+// Fetch é o substituto moderno para XMLHttpRequest: diferentemente de XMLHttpRequest, que usa retornos de chamada, Fetch é baseado em promessas e é integrado com recursos da web moderna, como service workers e Cross-Origin Resource Sharing (CORS) .
+
+
 const request = obj => {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest()
