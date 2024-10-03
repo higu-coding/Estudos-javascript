@@ -24,7 +24,7 @@ app.use(express.static(path.resolve(__dirname, 'public')))
 
 const sessionOptions = session({
     secret: '!!!!!!!!!!!!!!!',
-    store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }), //parei aqui
+    store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }), 
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -34,7 +34,7 @@ const sessionOptions = session({
 })
 
 app.use(sessionOptions)
-app.use(flash())
+app.use(flash()) 
 
 app.set('views', path.resolve(__dirname, 'src', 'views'))
 app.set('view engine', 'ejs')
