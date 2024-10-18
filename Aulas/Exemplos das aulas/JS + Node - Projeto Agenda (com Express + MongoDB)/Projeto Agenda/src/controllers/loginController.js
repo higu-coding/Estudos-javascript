@@ -11,18 +11,14 @@ exports.register = async function(req, res){
     
         if(login.errors.length > 0) {
             req.flash('errors', login.errors)
-            req.session.save(function() {
-                return res.redirect('index') // na aula está 'back', mas nao estava funcionando do jeito certo
-            })
+            await req.session.save();
+            return res.redirect('index'); // estava tentando com 'back' porem não estava funcionando, e com index, funcionou
             return
         }
 
         req.flash('success', 'Seu usuário foi criado com sucesso')
-            req.session.save(function() {
-                return res.redirect('index') // na aula está 'back', mas nao estava funcionando do jeito certo
-            })
-
-        return res.send(login.errors)
+            await req.session.save();
+            return res.redirect('index'); // estava tentando com 'back' porem não estava funcionando, e com index, funcionou
     }catch(e){
         console.log(e)
         return res.render('404')
