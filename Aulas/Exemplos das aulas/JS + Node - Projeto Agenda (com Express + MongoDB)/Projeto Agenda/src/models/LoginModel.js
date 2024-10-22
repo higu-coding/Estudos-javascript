@@ -34,9 +34,9 @@ class Login {
 
         if(!bcryptjs.compareSync(this.body.password, this.user.password)) {
             this.errors.push('Senha inválida')
+            this.user = null
             return
         }
-
     }
 
     async register() {
