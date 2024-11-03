@@ -6,9 +6,7 @@ const mongoose = require('mongoose')
 mongoose.connect(process.env.CONNECTIONSTRING)
     .then(() => {
         app.emit('pronto')
-    }).catch(e => {
-        console.log(e)
-    })
+    }).catch(e => { console.log(e) })
 
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
